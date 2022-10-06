@@ -12,8 +12,8 @@ class tokopedia():
 		self.link_toko	= f'https://tokopedia.com/{nama_toko}'
 		self.nama_toko	= nama_toko
 		self.tampil 	= tampil
-		self.simpan		= simpan
-		self.header		= {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'}
+		self.simpan	= simpan
+		self.header	= {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'}
 		self.dapatkanID()
 
 	def dapatkanID(self):
