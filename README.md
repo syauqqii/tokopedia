@@ -24,5 +24,9 @@ cd tokopedia
 ```
 6. Run program tokped.py
 ```
-python tokped.py
+python scrap.py --toko <nama_toko>
+```
+   Atau bisa juga dengan :
+```
+python main.py
 ```
