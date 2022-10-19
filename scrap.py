@@ -32,4 +32,4 @@ if __name__ == '__main__':
 
 		process = tokopedia(args.toko, args.data, args.file)
 	except KeyboardInterrupt:
-    exit(0)
+    		exit(0)
