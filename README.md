@@ -1,7 +1,10 @@
 # Tokopedia
 Aplikasi berbasis CLI untuk scrap produk dari toko tertentu yang ada di tokopedia.
 
-# Instalasi
+## Note
+Program akan saya perbarui, tidak hari ini karena ISP saya (XL) sedang tidak stabil, sekarang saya menggunakan setting DNS gratisan yang alhamdullilahnya bisa 😁
+
+## Instalasi
 1. Lakukan update dan upgrade
 ```
 apt update && apt upgrade -y
