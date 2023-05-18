@@ -1,4 +1,4 @@
-from tokoped import *
+from tokped import *
 
 def main():
 	if name == "nt":
