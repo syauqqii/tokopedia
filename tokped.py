@@ -27,11 +27,17 @@ class tokopedia():
 
 			if req.status_code == 200:
 				proses = bsoup(req.text, 'html.parser')
-				for i in proses.find_all('meta', attrs={'name':'branch:deeplink:$android_deeplink_path'}):
-					self.ID_toko = i.get('content')[5:]
+				script_element = proses.find_all('script', type='text/javascript')
+				script_content = script_element[3].string
+				pattern = r'\{\\\"shop_ids\\\":\[(\d+)\]\}'
+				matches = re.findall(pattern, script_content)
+				if matches:
+					self.ID_toko = matches[0]
 					print(f'  +-[>] Toko ditemukan <Response Code [{req.status_code}]>')
 					print(f'    [>] ID Toko : {self.ID_toko}')
-				self.dapatkanData()
+					self.dapatkanData()
+				else:
+					print(f'  +-[!] ERROR: Tidak dapat mendapatkan ID Toko')
 			else:
 				print(f'  +-[!] Toko tidak ditemukan <Response Code [{req.status_code}]>')
 		except:
