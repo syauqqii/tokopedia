@@ -1,13 +1,10 @@
 import json
-import requests
-
+from requests import get, post
 from pandas import DataFrame
 from os import mkdir, path, system, name
-
 from bs4 import BeautifulSoup as bsoup
 
 class tokopedia():
-
 	def __init__(self, nama_toko, tampil=0, simpan=1):
 		self.link_toko	= f'https://tokopedia.com/{nama_toko}'
 		self.nama_toko	= nama_toko
@@ -18,14 +15,13 @@ class tokopedia():
 
 	def dapatkanID(self):
 		try:
-			req 	= requests.post(self.link_toko, headers=self.header, timeout=3.000)
+			req 	= post(self.link_toko, headers=self.header, timeout=3.000)
 
 			system("cls||clear")
-			
+
 			print('\n [#] Alat untuk mengambil informasi produk yang ada ditokopedia!')
 			print('  |')
 			print(f'  +-[>] Toko : {self.link_toko}')
-
 			print('\n [#] Hasil')
 			print('  |')
 
@@ -43,7 +39,7 @@ class tokopedia():
 
 	def dapatkanData(self):
 		link_json	= f'https://ace.tokopedia.com/search/product/v3?shop_id={self.ID_toko}&rows=80&start=0&full_domain=www.tokopedia.com&scheme=https&device=desktop&source=shop_product'
-		request 	= requests.get(link_json, headers=self.header)
+		request 	= get(link_json, headers=self.header)
 		self.hasil	= request.json()
 
 		if not path.isdir(self.nama_toko):
