@@ -1,10 +1,29 @@
 # Tokopedia
-Aplikasi berbasis CLI untuk scrap produk dari toko tertentu yang ada di tokopedia.
+Aplikasi berbasis CLI untuk scraping produk dari toko tertentu yang ada di tokopedia.
 
 ## Note
 JIKA ADA BUG KIRIM AJA KE EMAIL 0xd1m5@gmail.com nanti saya FIX kan :)
 
-## Instalasi
+## Instalasi (Windows)
+1. Clone / Download repository ini
+```
+git clone https://github.com/syauqqii/tokopedia
+```
+2. Install library bs4
+```
+pip install bs4
+```
+3a. Jalankan Program (main.py)
+```
+python main.py
+```
+3b. Jalankan Program (scarp.py {argument required})
+```
+python main.py --toko nama_toko
+```
+ENJOYYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!!!
+
+## Instalasi (Linux)
 1. Lakukan update dan upgrade
 ```
 apt update && apt upgrade -y
