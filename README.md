@@ -2,7 +2,7 @@
 Aplikasi berbasis CLI untuk scrap produk dari toko tertentu yang ada di tokopedia.
 
 ## Note
-Program akan saya perbarui, tidak hari ini karena ISP saya (XL) sedang tidak stabil, sekarang saya menggunakan setting DNS gratisan yang alhamdullilahnya bisa 😁
+JIKA ADA BUG KIRIM AJA KE EMAIL 0xd1m5@gmail.com nanti saya FIX kan :)
 
 ## Instalasi
 1. Lakukan update dan upgrade
