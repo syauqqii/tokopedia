@@ -19,7 +19,7 @@ python main.py
 ```
 3b. Jalankan Program (scarp.py {argument required})
 ```
-python main.py --toko nama_toko
+python scrap.py --toko nama_toko
 ```
 ENJOYYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!!!
 
