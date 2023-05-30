@@ -1,3 +1,4 @@
+import re
 import json
 from requests import get, post
 from pandas import DataFrame
