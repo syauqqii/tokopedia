@@ -1,9 +1,9 @@
-import re
-import json
-from requests import get, post
-from pandas import DataFrame
+from re import findall
 from os import mkdir, path, system, name
-from bs4 import BeautifulSoup as bsoup
+from bs4 import BeautifulSoup as bs
+from json import dump
+from pandas import DataFrame
+from requests import get, post
 
 class tokopedia():
 	def __init__(self, nama_toko, tampil=0, simpan=1):
@@ -20,18 +20,18 @@ class tokopedia():
 
 			system("cls||clear")
 
-			print('\n [#] Alat untuk mengambil informasi produk yang ada ditokopedia!')
+			print('\n [#] Alat untuk mengambil informasi produk yang ada di toko dari tokopedia!')
 			print('  |')
 			print(f'  +-[>] Toko : {self.link_toko}')
 			print('\n [#] Hasil')
 			print('  |')
 
 			if req.status_code == 200:
-				proses = bsoup(req.text, 'html.parser')
+				proses = bs(req.text, 'html.parser')
 				script_element = proses.find_all('script', type='text/javascript')
 				script_content = script_element[3].string
 				pattern = r'\{\\\"shop_ids\\\":\[(\d+)\]\}'
-				matches = re.findall(pattern, script_content)
+				matches = findall(pattern, script_content)
 				if matches:
 					self.ID_toko = matches[0]
 					print(f'  +-[>] Toko ditemukan <Response Code [{req.status_code}]>')
