@@ -1,9 +1,49 @@
-from re import findall
 from os import mkdir, path, system, name
-from bs4 import BeautifulSoup as bs
-from json import dump
-from pandas import DataFrame
-from requests import get, post
+
+try:
+	from re import findall
+except ModuleNotFoundError:
+	try:
+		system("pip install re")
+		from re import findall
+	except ImportError:
+   		 exit(0)
+			
+try:
+	from requests import get, post
+except ModuleNotFoundError:
+	try:
+		system("pip install requests")
+		from requests import get, post
+	except ImportError:
+   		 exit(0)
+			
+try:
+	from bs4 import BeautifulSoup as bs
+except ModuleNotFoundError:
+	try:
+		system("pip install bs4")
+		from bs4 import BeautifulSoup as bs
+	except ImportError:
+   		 exit(0)
+			
+try:
+	from pandas import DataFrame
+except ModuleNotFoundError:
+	try:
+		system("pip install pandas")
+		from pandas import DataFrame
+	except ImportError:
+   		 exit(0)
+			
+try:
+	from json import dump
+except ModuleNotFoundError:
+	try:
+		system("pip install json")
+		from json import dump
+	except ImportError:
+   		 exit(0)
 
 class tokopedia():
 	def __init__(self, nama_toko, tampil=0, simpan=1):
