@@ -13,11 +13,7 @@ git clone https://github.com/syauqqii/tokopedia
 ```
 pip install bs4
 ```
-3a. Jalankan Program (main.py)
-```
-python main.py
-```
-3b. Jalankan Program (scarp.py {argument required})
+3. Jalankan Program (scarp.py {argument required})
 ```
 python scrap.py --toko nama_toko
 ```
@@ -44,7 +40,7 @@ cd tokopedia
 ```
  pip install requests, BeautifulSoup4
 ```
-6. Run program tokped.py
+6. Run program scrap.py
 ```
 python scrap.py --toko <nama_toko>
 ```
