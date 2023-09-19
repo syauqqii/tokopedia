@@ -8,7 +8,7 @@ except ModuleNotFoundError:
 		from re import findall
 	except ImportError:
    		 exit(0)
-			
+
 try:
 	from requests import get, post
 except ModuleNotFoundError:
@@ -17,7 +17,7 @@ except ModuleNotFoundError:
 		from requests import get, post
 	except ImportError:
    		 exit(0)
-			
+
 try:
 	from bs4 import BeautifulSoup as bs
 except ModuleNotFoundError:
@@ -26,7 +26,7 @@ except ModuleNotFoundError:
 		from bs4 import BeautifulSoup as bs
 	except ImportError:
    		 exit(0)
-			
+
 try:
 	from pandas import DataFrame
 except ModuleNotFoundError:
@@ -35,7 +35,7 @@ except ModuleNotFoundError:
 		from pandas import DataFrame
 	except ImportError:
    		 exit(0)
-			
+
 try:
 	from json import dump
 except ModuleNotFoundError:
@@ -50,8 +50,8 @@ class tokopedia():
 		self.link_toko	= f'https://tokopedia.com/{nama_toko}'
 		self.nama_toko	= nama_toko
 		self.tampil 	= tampil
-		self.simpan	= simpan
-		self.header	= {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'}
+		self.simpan		= simpan
+		self.header		= {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'}
 		self.dapatkanID()
 
 	def dapatkanID(self):
@@ -81,11 +81,11 @@ class tokopedia():
 					print(f'  +-[!] ERROR: Tidak dapat mendapatkan ID Toko')
 			else:
 				print(f'  +-[!] Toko tidak ditemukan <Response Code [{req.status_code}]>')
-		except:
+		except Exception as e:
 			print(f'  +-[!] Toko tidak valid <Response Code [{req.status_code}]>')
 
 	def dapatkanData(self):
-		link_json	= f'https://ace.tokopedia.com/search/product/v3?shop_id={self.ID_toko}&rows=80&start=0&full_domain=www.tokopedia.com&scheme=https&device=desktop&source=shop_product'
+		link_json	= f'https://ace.tokopedia.com/search/product/v4?shop_id={self.ID_toko}&rows=80&start=0&full_domain=www.tokopedia.com&scheme=https&device=desktop&source=shop_product'
 		request 	= get(link_json, headers=self.header)
 		self.hasil	= request.json()
 
@@ -93,7 +93,7 @@ class tokopedia():
 			mkdir(self.nama_toko)
 
 		with open(f'{self.nama_toko}/{self.nama_toko}_[detail].json', 'w') as file:
-			json.dump(self.hasil, file)
+			dump(self.hasil, file)
 
 		self.tampilkanData()
 
@@ -151,7 +151,7 @@ class tokopedia():
 				data += [{'name':i[0], 'price':i[1], 'url':i[2], 'image_url':i[3],'category_name':i[4]}]
 
 			with open(f'{self.nama_toko}/{self.nama_toko}_[produk].json', 'w') as file:
-				json.dump(data, file)
+				dump(data, file)
 
 		elif self.simpan == 2:
 			try:
