@@ -2,6 +2,9 @@
 Aplikasi berbasis CLI untuk scraping produk dari toko tertentu yang ada di tokopedia.
 Aplikasi CLI ini juga otomatis mendownload kebutuhan librarbynya sendiri jika di laptop / PC / Device kalian belum tersedia library yang dibutuhkan.
 
+MENGGUNAKAN = MENGERTI,
+SEGALA BENTUK PELANGGARAN DILUAR TANGGUNG JAWAB SAYA.
+
 ## Instalasi (Windows)
 1. Clone / Download repository ini
 ```
