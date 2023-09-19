@@ -11,7 +11,6 @@ git clone https://github.com/syauqqii/tokopedia
 ```
 python scrap.py --toko nama_toko
 ```
-ENJOYYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!!!
 
 ## Instalasi (Linux)
 1. Lakukan update dan upgrade
