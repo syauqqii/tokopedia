@@ -1,9 +1,6 @@
 # Tokopedia
 Aplikasi berbasis CLI untuk scraping produk dari toko tertentu yang ada di tokopedia.
 
-## Note
-JIKA ADA BUG KIRIM AJA KE EMAIL 0xd1m5@gmail.com nanti saya FIX kan :)
-
 ## Instalasi (Windows)
 1. Clone / Download repository ini
 ```
