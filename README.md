@@ -41,7 +41,3 @@ cd tokopedia
 ```
 python scrap.py --toko <nama_toko>
 ```
-   Atau bisa juga dengan :
-```
-python main.py
-```
